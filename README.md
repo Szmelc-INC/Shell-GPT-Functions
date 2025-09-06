@@ -8,19 +8,28 @@
 
 # Functions
 
-> ## Persistent Memory
+> # Persistent Memory Functions
 >
-> **Files:** `remember.py`, `memory.py`, `memory_list.py`
->
-> These add simple persistent memory commands to Shell GPT.
+> This adds simple persistent memory to Shell GPT.  
+> You can **remember**, **read**, **list**, **edit**, and **clear** memories across sessions.
 >
 > ---
 >
-> ## Remember
+> ## Installation
 >
-> Save command output, file content, or notes into memory.
+> Files:
 >
-> Examples:
+> - `remember.py`
+> - `memory.py`
+> - `memory_list.py`
+> - `memory_edit.py`
+> - `memory_clear.py`
+>
+> ---
+>
+> ## Usage Examples
+>
+> ### Remember
 >
 > ```bash
 > # Run a command and remember its output
@@ -29,38 +38,66 @@
 > # Remember contents of a file
 > sgpt "Remember contents of ~/summary.md"
 >
-> # Save a free-form note
+> # Remember a free-form note
 > sgpt "Remember that the project uses Python 3.12"
 > ```
 >
-> ---
->
-> ## Memory
->
-> Fetch a saved memory by ID:
+> ### Memory
 >
 > ```bash
+> # Read a memory by ID
 > sgpt "Read memory 1"
-> sgpt "Use memory 1 to explain what this output means"
+>
+> # Use a memory in a new query
+> sgpt "Memory 1, explain what this means"
 > ```
 >
-> ---
->
-> ## List Memories
->
-> List or search stored entries:
+> ### List Memories
 >
 > ```bash
+> # List recent memories
 > sgpt "List memories"
+>
+> # Search for memories about logs
 > sgpt "List memories about logs"
+> ```
+>
+> ### Edit Memories
+>
+> ```bash
+> # Edit memory title
+> sgpt "Edit memory 5 title to 'System summary'"
+>
+> # Replace memory contents
+> sgpt "Edit memory 5 contents to 'Shortened summary text'"
+>
+> # Append to memory contents
+> sgpt "Edit memory 5 contents, add 'Extra details'"
+> ```
+>
+> ### Clear Memories
+>
+> ```bash
+> # Clear a specific memory
+> sgpt "Clear memory 5"
+>
+> # Clear multiple memories
+> sgpt "Clear memory 2 and 3"
+>
+> # Clear all memories
+> sgpt "Clear all memories"
 > ```
 >
 > ---
 >
 > ## Notes
 >
-> - Data is stored in `~/.config/shell_gpt/memory.json`
-> - Each memory has an incremental `id` and optional `title`
+> - All data is stored locally in:
+>   ```
+>   ~/.config/shell_gpt/memory.json
+>   ```
+> - Each memory has an incremental `id` and optional `title`.
+> - Summaries auto-trim long outputs for easier use.
 
 ---
 
