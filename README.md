@@ -1,7 +1,7 @@
 # Shell-GPT-Functions
 > Some custom functions for Shell GPT
 
-# Setup
+## Setup
 > Drop `.py` files into `~/.config/shell_gpt/functions` and run `sgpt --install-functions`
 
 ---
@@ -61,3 +61,9 @@
 >
 > - Data is stored in `~/.config/shell_gpt/memory.json`
 > - Each memory has an incremental `id` and optional `title`
+
+---
+
+# Note
+> `execute_shell.py` is a default function to execute shell commands (made by Shell GPT author)
+
